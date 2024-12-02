@@ -45,11 +45,11 @@ fn all_windowed_opt_failure(report: &[u32], f: impl Fn(u32, u32) -> bool, allow_
       return false;
     }
 
+    have_allowed_failure = true;
+
     if i == report.len()-2 {
       continue
     }
-
-    have_allowed_failure = true;
 
     if f(x, report[i+2]) {
       // Skip over y
